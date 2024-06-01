@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin: 20px 0;
+  }
+  
+  #sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    gap: 0;
+    margin-bottom: 20px;
+  }
+  
+  .cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.2em;
+    background-color: #fafafa;
+    border: 1px solid #000;
+    box-sizing: border-box;
+  }
+  
+  .cell input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    font-size: 1.2em;
+    background-color: #fafafa;
+  }
+  
+  .cell:nth-child(3n) {
+    border-right: 2px solid black;
+  }
+  
+  .cell:nth-child(3n + 1) {
+    border-left: 2px solid black;
+  }
+  
+  .cell:nth-child(n+19):nth-child(-n+27),
+  .cell:nth-child(n+46):nth-child(-n+54),
+  .cell:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 2px solid black;
+  }
+  
+  .cell:nth-child(n+1):nth-child(-n+9),
+  .cell:nth-child(n+28):nth-child(-n+36),
+  .cell:nth-child(n+55):nth-child(-n+63) {
+    border-top: 2px solid black;
+  }
+  
+  .cell.initial {
+    color: black;
+  }
+  
+  .cell.solution {
+    color: red;
+  }
+  
+  .controls button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .controls button:hover {
+    background-color: #0056b3;
+  }
+  
